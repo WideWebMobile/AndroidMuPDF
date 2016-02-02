@@ -18,9 +18,6 @@ import java.io.InputStream;
 public class MainActivity extends AppCompatActivity {
 
     private MuPDFCore core;
-    private MuPDFReaderView mDocView;
-    private String mFilePath;
-    Bundle args = new Bundle();
     private static final String TAG = "MainActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             Log.e(TAG, "Document Not Opening");
         }
         if (core != null) {
-            mDocView = new MuPDFReaderView(this) {
+            MuPDFReaderView mDocView = new MuPDFReaderView(this) {
                 @Override
                 protected void onMoveToChild(int i) {
                     if (core == null)
@@ -80,13 +77,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private MuPDFCore openFile(String path) {
-        int lastSlashPos = path.lastIndexOf('/');
-        mFilePath = new String(lastSlashPos == -1
-                ? path
-                : path.substring(lastSlashPos + 1));
         try {
             core = new MuPDFCore(this, path);
-            // New file: drop the old outline data
         } catch (Exception e) {
             Log.e(TAG, e.getMessage());
             return null;
