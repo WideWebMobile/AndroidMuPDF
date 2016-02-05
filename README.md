@@ -22,5 +22,5 @@ Add this to your module's `build.gradle` file:
 ```gradle
 dependencies {
     ...
-    compile 'com.github.WideWebMobile:AndroidMuPDF:0.0.2'
+    compile 'com.github.WideWebMobile:AndroidRippleView:0.0.1'
 }
