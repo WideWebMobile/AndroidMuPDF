@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.RelativeLayout;
 
-import com.artifex.mupdfdemo.FilePicker;
 import com.artifex.mupdfdemo.MuPDFCore;
 import com.artifex.mupdfdemo.MuPDFPageAdapter;
 import com.artifex.mupdfdemo.MuPDFReaderView;
@@ -58,12 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
             };
-            mDocView.setAdapter(new MuPDFPageAdapter(this, new FilePicker.FilePickerSupport() {
-                @Override
-                public void performPickFor(FilePicker picker) {
-
-                }
-            }, core));
+            mDocView.setAdapter(new MuPDFPageAdapter(this, null, core));
             mContentView.addView(mDocView);
         }
     }

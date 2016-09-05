@@ -91,7 +91,7 @@ public class ChoosePDFActivity extends ListActivity {
 		mUpdateFiles = new Runnable() {
 			public void run() {
 				Resources res = getResources();
-				String appName = res.getString(R.string.app_name);
+				String appName = res.getString(R.string.app_name_pdf);
 				String version = res.getString(R.string.version);
 				String title = res.getString(R.string.picker_title_App_Ver_Dir);
 				setTitle(String.format(title, appName, version, mDirectory));
